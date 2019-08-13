@@ -44,7 +44,40 @@ describe('Round', function () {
 
   });
 
+  it('should be able to take a turn with a wrong guess', function () {
+    expect(round.incorrectGuesses).to.deep.equal([]);
 
+    expect(round.turns).to.equal(0);
+
+    expect(round.returnCurrentCard()).to.equal(card1);
+
+
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen')
+
+    expect(round.returnCurrentCard()).to.equal(card3);
+
+    expect(round.turns).to.equal(2);
+
+    expect(round.incorrectGuesses).to.deep.equal([14]);
+
+  });
+
+  it('should be able to calculate the percent correct with right answers', function () {
+    
+    round.takeTurn('sea otter');
+    round.takeTurn('gallbladder');
+    round.takeTurn('playing with bubble wrap');
+    expect(round.calculatePercentCorrect()).to.equal(100);
+  });
+
+  it('should be able to calculate the percent correct with wrong answers', function () {
+
+    round.takeTurn('sea otter');
+    round.takeTurn('spleen');
+    round.takeTurn('playing with bubble wrap');
+    expect(round.calculatePercentCorrect()).to.equal(66);
+  });
 
   
 

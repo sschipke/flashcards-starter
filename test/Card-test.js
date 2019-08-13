@@ -19,16 +19,14 @@ describe('Card', function() {
   }); 
 
   it('should store a question', function() {
-    expect(card1.question).to.equal('What allows you to define a set of related information using key-value pairs?');
+    expect(card1.question).to.equal('What is Robbie\'s favorite animal');
   });  
 
   it('should store a list of possible answers', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-    expect(card.answers).to.deep.equal(['object', 'array', 'function']);
+    expect(card1.answers).to.deep.equal(['sea otter', 'pug', 'capybara']);
   });  
 
   it('should store the correct answer', function() {
-    const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object');
-    expect(card.correctAnswer).to.equal('object');
+    expect(card1.correctAnswer).to.equal('sea otter');
   });
 });

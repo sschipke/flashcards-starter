@@ -15,6 +15,12 @@ class Round {
     this.turns++;
     return turn.giveFeedback();
   }
+  calculatePercentCorrect() {
+    return parseInt((this.turns - this.incorrectGuesses.length) / this.turns*100)
+  }
+  endRound() {
+    console.log(`** Round over!** You answered ${this.calculatePercentCorrect()}% correct`)
+  }
 }
 
 module.exports = Round;
