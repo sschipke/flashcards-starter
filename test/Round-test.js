@@ -79,6 +79,18 @@ describe('Round', function () {
     expect(round.calculatePercentCorrect()).to.equal(66);
   });
 
+  it('should be able to end the round with all correct answers', function () {
+    round.takeTurn('sea otter');
+    round.takeTurn('gallbladder');
+    round.takeTurn('playing with bubble wrap');
+    round.endRound();
   
+  });
+  it('should be able to end the round with incorrect answers', function () {
+    round.takeTurn('cucumber');
+    round.takeTurn('gallbladder');
+    round.takeTurn('dave');
+    round.endRound();
+  });
 
 })

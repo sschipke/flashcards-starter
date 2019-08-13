@@ -37,7 +37,7 @@ describe('Turn', function() {
   });
 
   it('be able to evaluate a guess', function () {
-    const card1 = new Card(1, 'Question', ['answers'], 'correct')
+    const card1 = new Card({id:1, question:'Question', answers:['answers'], correctAnswer:'correct'})
     const turn1 = new Turn('incorrect', card1);
     const turn2 = new Turn('correct', card1);
 
@@ -46,7 +46,7 @@ describe('Turn', function() {
   });
 
   it('be able to give feedback', function () {
-    const card1 = new Card(1, 'Question', ['answers'], 'correct')
+    const card1 = new Card({id:1, question: 'Question', answers:['answers'], correctAnswer:'correct'})
     const turn1 = new Turn('incorrect', card1);
     const turn2 = new Turn('correct', card1);
 
