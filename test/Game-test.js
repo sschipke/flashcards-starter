@@ -9,7 +9,7 @@ const Round = require('../src/Round');
 const Game = require('../src/Game');
 
 
-describe('Round', function () { 
+describe('Game', function () { 
   const game = new Game();
   game.start()
 })
