@@ -33,10 +33,6 @@ Node server running on port 3000
 
 ### JavaScript
 
-**Create all of your feature code files in the `src` directory.**
-
-We will be using the `module.exports` and `require` syntax to share code across files.
-
 ## How to View Your Code in Action
 
 Once you are working through Iteration 3, you will want to start your server to test your functionality.
